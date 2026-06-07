@@ -1,5 +1,5 @@
 #!/bin/bash
-udpipe12 = /home/zeman/nastroje/udpipe/udpipe-1.2.0-bin/bin-linux64/udpipe
+udpipe12=/home/zeman/nastroje/udpipe/udpipe-1.2.0-bin/bin-linux64/udpipe
 
 [ $# -ge 3 ] || { echo Usage: $0 datadir treebank modeldir >&2; exit 1; }
 data="$1"; shift
