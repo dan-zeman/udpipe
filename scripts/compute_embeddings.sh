@@ -12,6 +12,8 @@ for d in $data/*/; do
 
   for f in $d*.conllu; do
     [ $f.npz -nt $f ] && continue
-    sbatch -p gpu-ms,gpu-troja -G 1 -C "gpu_cc6.1|gpu_cc7.5|gpu_cc8.0|gpu_cc8.6" -x dll-8gpu5 --mem=8G -o $f.log ./run2 wembedding_service/compute_wembeddings.py --format=conllu $f $f.npz --model=$model "$@"
+    # DZ: Na clusteru zmizely některé stroje. Nemůžu je zmiňovat v požadavcích, pak to celé spadne ("Invalid feature specification"). Dokonce i v logickém OR musí být všechny požadavky validní (gpu_cc7.5 teď není).
+    #sbatch -p gpu-ms,gpu-troja -G 1 -C "gpu_cc6.1|gpu_cc7.5|gpu_cc8.0|gpu_cc8.6" -x dll-8gpu5 --mem=8G -o $f.log ./run2 wembedding_service/compute_wembeddings.py --format=conllu $f $f.npz --model=$model "$@"
+    sbatch -p gpu-ms,gpu-troja -G 1 -C "gpu_cc6.1|gpu_cc8.0|gpu_cc8.6" --mem=8G -o $f.log ./run2 wembedding_service/compute_wembeddings.py --format=conllu $f $f.npz --model=$model "$@"
   done
 done
