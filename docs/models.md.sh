@@ -3,6 +3,10 @@
 models="models_ud217.md models_ud215.md models_ud212.md models_ud210.md models_ud26.md models_pdtc20.md models_pdtc10.md models_evalatin20.md"
 
 cat <<EOF
+<style>
+  th {position: sticky; top: 0; background-color: #ffffff; z-index: 2}
+</style>
+
 # UDPipe 2 Models
 
 EOF
