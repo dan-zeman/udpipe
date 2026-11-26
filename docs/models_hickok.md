@@ -83,15 +83,6 @@ word embeddings.
 
 ### Model Performance
 
-<style>
-  <!-- Make sure that the header is visible even if the table is long and the user scrolls down. -->
-  th {
-      position: sticky;
-      top: 0;
-      background-color: #ffffff;
-      z-index: 2;
-  }
-</style>
 <table class="table table-condensed table-bordered table-striped">
 <thead>
 <tr>
