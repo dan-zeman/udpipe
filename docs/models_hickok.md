@@ -9,7 +9,7 @@ the [FicTree](https://universaldependencies.org/treebanks/cs_fictree/index.html)
 
 The models require [UDPipe 2](https://ufal.mff.cuni.cz/udpipe/2).
 
-## Training Data
+### Training Data
 
 | Dataset                                                       | Sentences | Words   | Description                                    |
 |:--------------------------------------------------------------|----------:|--------:|:-----------------------------------------------|
