@@ -1,10 +1,10 @@
-## Czech HiČKoK Model #czech_hickok_model
+## Czech HIČKOK Model #czech_hickok_model
 
 HIČKOK models cover historical stages of Czech from 13th to 21st centuries. They are distributed
 under the [CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) license. The models are
 based on manually annotated data from the [HIČKOK](https://korpus.cz/hickok) project, combined with
 the [FicTree](https://universaldependencies.org/treebanks/cs_fictree/index.html) treebank from
-[Universal Dependencies 2.19](http://hdl.handle.net/11234/1-6316). In addition, the models use
+[Universal Dependencies 2.19](https://hdl.handle.net/11234/1-6316). In addition, the models use
 [RobeCzech](https://huggingface.co/ufal/robeczech-base).
 
 The models require [UDPipe 2](https://ufal.mff.cuni.cz/udpipe/2).
@@ -40,7 +40,7 @@ The models require [UDPipe 2](https://ufal.mff.cuni.cz/udpipe/2).
 <td style="text-align:right">19th century</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="http://hdl.handle.net/11234/1-6316">UD 2.19 Czech FicTree</a></td>
+<td style="text-align:left"><a href="https://hdl.handle.net/11234/1-6316">UD 2.19 Czech FicTree</a></td>
 <td style="text-align:right">10,160</td>
 <td style="text-align:right">133,637</td>
 <td style="text-align:right">Czech fiction published between 1991 and 2007</td>
