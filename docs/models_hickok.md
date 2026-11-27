@@ -9,44 +9,14 @@ the [FicTree](https://universaldependencies.org/treebanks/cs_fictree/index.html)
 
 The models require [UDPipe 2](https://ufal.mff.cuni.cz/udpipe/2).
 
-## Training Data
+### Training Data
 
-<table class="table table-condensed table-bordered table-striped">
-<thead>
-<tr>
-<th style="text-align:left">Dataset</th>
-<th style="text-align:right">Sentences</th>
-<th style="text-align:right">Words</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><a href="https://korpus.cz/hickok">HIČKOK e13</a></td>
-<td style="text-align:right">5,712</td>
-<td style="text-align:right">105,444</td>
-<td style="text-align:right">Old Czech (13th to 15th century)</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="https://korpus.cz/hickok">HIČKOK e16</a></td>
-<td style="text-align:right">4,967</td>
-<td style="text-align:right">103,829</td>
-<td style="text-align:right">Middle Czech (16th to 18th century)</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="https://korpus.cz/hickok">HIČKOK e19</a></td>
-<td style="text-align:right">5,546</td>
-<td style="text-align:right">110,929</td>
-<td style="text-align:right">19th century</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="https://hdl.handle.net/11234/1-6316">UD 2.19 Czech FicTree</a></td>
-<td style="text-align:right">10,160</td>
-<td style="text-align:right">133,637</td>
-<td style="text-align:right">Czech fiction published between 1991 and 2007</td>
-</tr>
-</tbody>
-</table>
+| Dataset                                                       | Sentences | Words   | Description                                    |
+|:--------------------------------------------------------------|----------:|--------:|:-----------------------------------------------|
+| [HIČKOK e13](https://korpus.cz/hickok)                        | 5,712     | 105,444 | Old Czech (13th to 15th century)               |
+| [HIČKOK e16](https://korpus.cz/hickok)                        | 4,967     | 103,829 | Middle Czech (16th to 18th century)            |
+| [HIČKOK e19](https://korpus.cz/hickok)                        | 5,546     | 110,929 | 19th century                                   |
+| [UD 2.19 Czech FicTree](https://hdl.handle.net/11234/1-6316)  | 10,160    | 133,637 | Czech fiction published between 1991 and 2007  |
 
 All training datasets have manual annotation of morphology (lemma, UPOS, morphological features).
 FicTree has also manual annotation of syntactic dependency relations. In the three HIČKOK datasets,
@@ -83,90 +53,13 @@ word embeddings.
 
 ### Model Performance
 
-<table class="table table-condensed table-bordered table-striped">
-<thead>
-<tr>
-<th style="text-align:left">Model</th>
-<th style="text-align:left">Mode</th>
-<th style="text-align:right">Words</th>
-<th style="text-align:right">Sents</th>
-<th style="text-align:right">Lemma</th>
-<th style="text-align:right">UPOS</th>
-<th style="text-align:right">UFeats</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><span id="czech-hickok-e13-261120">czech-hickok-e13-261120</span></td>
-<td style="text-align:left">Raw text</td>
-<td style="text-align:right">99.66</td>
-<td style="text-align:right">92.12</td>
-<td style="text-align:right">95.88</td>
-<td style="text-align:right">97.76</td>
-<td style="text-align:right">93.71</td>
-</tr>
-<tr>
-<td style="text-align:left"><span id="czech-hickok-e13-261120">czech-hickok-e13-261120</span></td>
-<td style="text-align:left">Gold tokenization</td>
-<td style="text-align:right">—</td>
-<td style="text-align:right">—</td>
-<td style="text-align:right">96.13</td>
-<td style="text-align:right">97.99</td>
-<td style="text-align:right">93.93</td>
-</tr>
-<tr>
-<td style="text-align:left"><span id="czech-hickok-e16-261120">czech-hickok-e16-261120</span></td>
-<td style="text-align:left">Raw text</td>
-<td style="text-align:right">99.92</td>
-<td style="text-align:right">92.23</td>
-<td style="text-align:right">96.60</td>
-<td style="text-align:right">98.78</td>
-<td style="text-align:right">95.28</td>
-</tr>
-<tr>
-<td style="text-align:left"><span id="czech-hickok-e16-261120">czech-hickok-e16-261120</span></td>
-<td style="text-align:left">Gold tokenization</td>
-<td style="text-align:right">—</td>
-<td style="text-align:right">—</td>
-<td style="text-align:right">96.67</td>
-<td style="text-align:right">98.85</td>
-<td style="text-align:right">95.33</td>
-</tr>
-<tr>
-<td style="text-align:left"><span id="czech-hickok-e19-261120">czech-hickok-e19-261120</span></td>
-<td style="text-align:left">Raw text</td>
-<td style="text-align:right">99.78</td>
-<td style="text-align:right">92.62</td>
-<td style="text-align:right">97.73</td>
-<td style="text-align:right">98.64</td>
-<td style="text-align:right">96.52</td>
-</tr>
-<tr>
-<td style="text-align:left"><span id="czech-hickok-e19-261120">czech-hickok-e19-261120</span></td>
-<td style="text-align:left">Gold tokenization</td>
-<td style="text-align:right">—</td>
-<td style="text-align:right">—</td>
-<td style="text-align:right">97.96</td>
-<td style="text-align:right">98.85</td>
-<td style="text-align:right">96.67</td>
-</tr>
-<tr>
-<td style="text-align:left"><span id="czech-hickok-fictree-261120">czech-hickok-fictree-261120</span></td>
-<td style="text-align:left">Raw text</td>
-<td style="text-align:right">100.0</td>
-<td style="text-align:right">98.49</td>
-<td style="text-align:right">99.25</td>
-<td style="text-align:right">99.23</td>
-<td style="text-align:right">97.67</td>
-</tr>
-<tr>
-<td style="text-align:left"><span id="czech-hickok-fictree-261120">czech-hickok-fictree-261120</span></td>
-<td style="text-align:left">Gold tokenization</td>
-<td style="text-align:right">—</td>
-<td style="text-align:right">—</td>
-<td style="text-align:right">99.25</td>
-<td style="text-align:right">99.24</td>
-<td style="text-align:right">97.67</td>
-</tr>
-</tbody>
-</table>
+| Model                       | Mode              | Words  | Sents  | Lemma  | UPOS   | UFeats |
+|:----------------------------|:------------------|-------:|-------:|-------:|-------:|-------:|
+| czech-hickok-e13-261120     | Raw text          | 99.66  | 92.12  | 95.88  | 97.76  | 93.71  |
+| czech-hickok-e13-261120     | Gold tokenization | —      | —      | 96.13  | 97.99  | 93.93  |
+| czech-hickok-e16-261120     | Raw text          | 99.92  | 92.23  | 96.60  | 98.78  | 95.28  |
+| czech-hickok-e16-261120     | Gold tokenization | —      | —      | 96.67  | 98.85  | 95.33  |
+| czech-hickok-e19-261120     | Raw text          | 99.78  | 92.62  | 97.73  | 98.64  | 96.52  |
+| czech-hickok-e19-261120     | Gold tokenization | —      | —      | 97.96  | 98.85  | 96.67  |
+| czech-hickok-fictree-261120 | Raw text          | 100.0  | 98.49  | 99.25  | 99.23  | 97.67  |
+| czech-hickok-fictree-261120 | Gold tokenization | —      | —      | 99.25  | 99.24  | 97.67  |
