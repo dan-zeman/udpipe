@@ -1,0 +1,32 @@
+#!/bin/bash
+# Cloned from ~straka/bin/run
+# Runs a job on the cluster.
+# In the original usage, the command would be ~straka/bin.local/withcuda100 (or analogous for other CUDA versions),
+# followed by the real job script as the argument. In my clone here, I hardwired withcuda118 and a virtual environment
+# with TensorFlow 2, meaning that this version should be suitable for computing BERT-style word embeddings before
+# training proper. (The virtual environment is also suitable for inference, but this run script is not used there.)
+
+[ -n "$SLURM_JOB_ID" ] && echo 🔑 $SLURM_JOB_ID >&2
+echo 💻 $(hostname) >&2
+[ -n "${SLURM_JOB_GPUS:-$SLURM_STEP_GPUS}$CUDA_VISIBLE_DEVICES" ] && echo 📼 ${SLURM_JOB_GPUS:-$SLURM_STEP_GPUS} $CUDA_VISIBLE_DEVICES >&2
+echo 🕑 $(date) >&2
+echo 📁 $PWD >&2
+echo 📖 "$@" >&2
+
+# DZ: The following lines are taken from ~straka/bin.local/withcuda118
+
+export PATH="/opt/cuda/11.8/bin:$PATH"
+export XLA_FLAGS=--xla_gpu_cuda_data_dir=/opt/cuda/11.8
+export LD_LIBRARY_PATH="/opt/cuda/11.8/lib64:/opt/cuda/11.8/cudnn/8.9.2/lib:/opt/cuda/11.8/nccl/2.15.5/lib:/opt/cuda/11.8/extras/CUPTI/lib64:$LD_LIBRARY_PATH"
+
+if [ -z "$CUDA_VISIBLE_DEVICES" ]; then
+  echo "CUDA_VISIBLE_DEVICES not set, aborting!" >&2
+  exit 1
+fi
+
+# DZ: The following is my addition to activate the right venv for Python.
+# Although
+
+source /net/work/people/zeman/python-env-udpipe-inference-lenka/bin/activate
+
+exec /usr/bin/time -f "🚪 %x\n⌛ %E real, %U user, %S sys, %M kB" "$@"
